@@ -60,7 +60,7 @@ registerListeners(app);
 (async () => {
   const port = Number.parseInt(process.env.PORT || '3000', 10);
   await app.start(port);
-  app.logger.info(`Starter Agent is running on port ${port}!`);
+  app.logger.info(`Team Agent is running on port ${port}!`);
   if (process.env.SLACK_REDIRECT_URI) {
     const origin = new URL(process.env.SLACK_REDIRECT_URI).origin;
     app.logger.info(`Connect the Slack MCP Server: ${origin}/slack/install`);
