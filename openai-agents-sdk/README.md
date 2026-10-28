@@ -6,11 +6,11 @@ A team agent template built with [Bolt for JavaScript](https://docs.slack.dev/to
 
 The team agent interacts with users through five entry points:
 
-* **App Home** — Displays a welcome message with instructions on how to interact.
-* **Direct Messages** — Users message the agent directly to find a runbook or triage a request. It responds in-thread, maintaining context across follow-ups.
-* **Channel @mentions** — Mention the agent in a team channel with a request. It answers from a runbook when one covers it, or offers to start one.
-* **Channel messages** — The agent follows along in channels it's a member of. When a message settles something worth keeping, the agent adds it to the team's runbooks on its own.
-* **Assistant Panel** — Users click _Add Agent_ in Slack, select the agent, and pick from suggested prompts or type a message.
+- **App Home** — Displays a welcome message with instructions on how to interact.
+- **Direct Messages** — Users message the agent directly to find a runbook or triage a request. It responds in-thread, maintaining context across follow-ups.
+- **Channel @mentions** — Mention the agent in a team channel with a request. It answers from a runbook when one covers it, or offers to start one.
+- **Channel messages** — The agent follows along in channels it's a member of. When a message settles something worth keeping, the agent adds it to the team's runbooks on its own.
+- **Assistant Panel** — Users click _Add Agent_ in Slack, select the agent, and pick from suggested prompts or type a message.
 
 The agent works with runbooks through three app tools that call the Web API with the bot token: `list_runbooks`, `read_runbook`, and `create_runbook`. When a person has connected the [Slack MCP Server](https://github.com/slackapi/slack-mcp-server), the agent uses its runbook tools as that person instead, which can also edit existing runbooks section by section. One more app tool (emoji reactions) shows a request was picked up. Add your own tools to customize it for your use case.
 
@@ -18,9 +18,9 @@ The agent works with runbooks through three app tools that call the Web API with
 
 Runbooks are Slack canvases titled `Runbook: <topic>`. Each one holds how the team does something: the steps, who owns it, and who to escalate to. Anyone can read and edit them in Slack, and the agent does too:
 
-* **Reading** — When a request comes in, the agent finds the runbook that covers it and answers from it.
-* **Writing on request** — Ask the agent to write a runbook and it creates one. With the Slack MCP Server connected, it can also fix the runbook that covers the topic.
-* **Learning from messages** — The same agent reads each channel message. If the message fixed a problem, named an owner, made a decision, or corrected a runbook, the agent creates a runbook for it, or, with the Slack MCP Server connected, updates the one that covers it. Most messages settle nothing worth keeping, and the agent leaves those alone.
+- **Reading** — When a request comes in, the agent finds the runbook that covers it and answers from it.
+- **Writing on request** — Ask the agent to write a runbook and it creates one. With the Slack MCP Server connected, it can also fix the runbook that covers the topic.
+- **Learning from messages** — The same agent reads each channel message. If the message fixed a problem, named an owner, made a decision, or corrected a runbook, the agent creates a runbook for it, or, with the Slack MCP Server connected, updates the one that covers it. Most messages settle nothing worth keeping, and the agent leaves those alone.
 
 This is the loop the template is built to show: the runbooks the agent writes from messages are the runbooks it answers from next time.
 
@@ -84,8 +84,8 @@ npx skills add slackapi/slack-skills-plugin -y -a opencode
 
 Install the latest version of the Slack CLI for your operating system:
 
-* [Slack CLI for macOS & Linux](https://docs.slack.dev/tools/slack-cli/guides/installing-the-slack-cli-for-mac-and-linux/)
-* [Slack CLI for Windows](https://docs.slack.dev/tools/slack-cli/guides/installing-the-slack-cli-for-windows/)
+- [Slack CLI for macOS & Linux](https://docs.slack.dev/tools/slack-cli/guides/installing-the-slack-cli-for-mac-and-linux/)
+- [Slack CLI for Windows](https://docs.slack.dev/tools/slack-cli/guides/installing-the-slack-cli-for-windows/)
 
 You'll also need to log in if this is your first time using the Slack CLI.
 
@@ -323,18 +323,18 @@ Every incoming request is routed to a "listener". This directory groups each lis
 
 **`/listeners/events`** — Handles incoming events:
 
-* `app-home-opened.js` — Publishes the App Home view, or pins suggested prompts to the agent DM Messages tab (branches on `event.tab`).
-* `app-mentioned.js` — Responds to @mentions in channels.
-* `message.js` — Responds to direct messages and learns from channel messages.
+- `app-home-opened.js` — Publishes the App Home view, or pins suggested prompts to the agent DM Messages tab (branches on `event.tab`).
+- `app-mentioned.js` — Responds to @mentions in channels.
+- `message.js` — Responds to direct messages and learns from channel messages.
 
 **`/listeners/actions`** — Handles interactive components:
 
-* `feedback-buttons.js` — Handles thumbs up/down feedback on agent responses.
+- `feedback-buttons.js` — Handles thumbs up/down feedback on agent responses.
 
 **`/listeners/views`** — Builds Block Kit views:
 
-* `app-home-builder.js` — Constructs the App Home Block Kit view.
-* `feedback-builder.js` — Creates the feedback button block attached to responses.
+- `app-home-builder.js` — Constructs the App Home Block Kit view.
+- `feedback-builder.js` — Creates the feedback button block attached to responses.
 
 ### `/agent`
 
