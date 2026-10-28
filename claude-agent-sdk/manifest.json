@@ -1,10 +1,10 @@
 {
   "display_information": {
-    "name": "Starter Agent - Claude SDK"
+    "name": "Team Agent - Claude SDK"
   },
   "features": {
     "agent_view": {
-      "agent_description": "Hi, I am an agent built using Bolt for JavaScript. I am here to help you out!",
+      "agent_description": "Hi, I am a team agent built using Bolt for JavaScript. I keep your team's runbooks current and help route requests.",
       "suggested_prompts": []
     },
     "app_home": {
@@ -13,7 +13,7 @@
       "messages_tab_read_only_enabled": false
     },
     "bot_user": {
-      "display_name": "Starter Agent - Claude SDK (JavaScript)",
+      "display_name": "Team Agent - Claude SDK (JavaScript)",
       "always_online": true
     }
   },
@@ -21,37 +21,40 @@
     "redirect_urls": ["https://ngrok-free.app/slack/oauth_redirect"],
     "scopes": {
       "user": [
-        "search:read",
+        "canvases:read",
+        "canvases:write",
         "channels:history",
         "channels:read",
+        "chat:write",
         "groups:history",
         "groups:read",
         "im:history",
         "mpim:history",
-        "users:read",
-        "search:read.public",
-        "search:read.private",
-        "search:read.mpim",
-        "search:read.im",
+        "search:read",
         "search:read.files",
+        "search:read.im",
+        "search:read.mpim",
+        "search:read.private",
+        "search:read.public",
         "search:read.users",
-        "chat:write",
-        "canvases:read",
-        "canvases:write",
+        "users:read",
         "users:read.email"
       ],
       "bot": [
         "app_mentions:read",
+        "assistant:write",
+        "canvases:read",
+        "canvases:write",
         "channels:history",
         "chat:write",
+        "files:read",
         "groups:history",
         "im:history",
         "im:read",
         "im:write",
-        "reactions:write",
         "reactions:read",
-        "users:read",
-        "assistant:write"
+        "reactions:write",
+        "users:read"
       ]
     }
   },
