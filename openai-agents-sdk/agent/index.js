@@ -1,2 +1,2 @@
-export { runAgent, starterAgent } from './agent.js';
+export { agent, runAgent } from './agent.js';
 export { AgentDeps } from './deps.js';
