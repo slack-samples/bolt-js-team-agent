@@ -46,7 +46,7 @@ const app = new App({
   ignoreSelf: false,
   clientId: process.env.SLACK_CLIENT_ID,
   clientSecret: process.env.SLACK_CLIENT_SECRET,
-  stateSecret: 'bolt-js-starter-agent',
+  stateSecret: 'bolt-js-team-agent',
   scopes: botScopes,
   installationStore,
   installerOptions: {
