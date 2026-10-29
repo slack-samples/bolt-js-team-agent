@@ -61,6 +61,7 @@ const MAX_TURNS_REPLY =
 const RUNBOOK_TOOLS = [
   'mcp__slack-mcp__slack_create_canvas',
   'mcp__slack-mcp__slack_read_canvas',
+  'mcp__slack-mcp__slack_search_public',
   'mcp__slack-mcp__slack_search_public_and_private',
   'mcp__slack-mcp__slack_update_canvas',
 ];
