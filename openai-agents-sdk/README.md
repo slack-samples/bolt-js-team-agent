@@ -2,6 +2,9 @@
 
 A team agent template built with [Bolt for JavaScript](https://docs.slack.dev/tools/bolt-js/) and [OpenAI Agents SDK](https://openai.github.io/openai-agents-js/) using models from [OpenAI](https://openai.com). It keeps your team's runbooks current from what channel messages settle and helps route the requests that come in. Runbooks are Slack canvases the agent reads and writes with the bot token, or as a person who has connected the [Slack MCP Server](https://github.com/slackapi/slack-mcp-server).
 
+> [!WARNING]
+> **This agent reads every message in the channels it's a member of and acts on what they settle.** With the Slack MCP Server connected, a crafted message could steer it into searching the author's DMs and private channels, or into editing any canvas they can open. Only add it to channels you trust, and refer to [Slack MCP Server](#slack-mcp-server) for how it's connected.
+
 ## App Overview
 
 The team agent interacts with users through five entry points:

@@ -2,6 +2,9 @@
 
 A team agent template built with [Bolt for JavaScript](https://docs.slack.dev/tools/bolt-js/) and the [Claude Agent SDK](https://platform.claude.com/docs/en/agent-sdk/overview) using models from [Anthropic](https://www.anthropic.com). It keeps your team's runbooks current by learning from channel messages, and helps route the requests that come in. Runbooks are Slack canvases that the agent reads and writes with the bot token, or through the [Slack MCP Server](https://github.com/slackapi/slack-mcp-server) for people who connect it.
 
+> [!WARNING]
+> **This agent reads every message in the channels it's a member of and acts on what they settle.** With the Slack MCP Server connected, a crafted message could steer it into searching the author's DMs and private channels, or into editing any canvas they can open. Only add it to channels you trust, and refer to [Slack MCP Server](#slack-mcp-server) for how it's connected.
+
 ## App Overview
 
 The team agent interacts with users through five entry points:

@@ -2,6 +2,9 @@
 
 A sample Slack agent built with [Bolt for JavaScript](https://docs.slack.dev/tools/bolt-js/) that keeps your team's runbooks current and helps route the requests that come in. Runbooks are Slack canvases titled `Runbook: <topic>`. The agent answers from them, and it learns from the messages in your team's channels, so the runbooks it writes are the ones it answers from next time.
 
+> [!WARNING]
+> **This agent reads every message in the channels it's a member of and acts on what they settle.** With the Slack MCP Server connected, a crafted message could steer it into searching the author's DMs and private channels, or into editing any canvas they can open. Only add it to channels you trust, and refer to the framework README for how the Slack MCP Server is connected.
+
 ## Choose Your Framework
 
 This repo contains the same app built with two different AI agent frameworks. Pick the one that fits your stack:
