@@ -4,7 +4,7 @@ This file provides guidance to coding agents when working with code in this repo
 
 ## What This Is
 
-A monorepo with two functionally identical implementations of the Starter Agent for Slack, each self-contained with its own `AGENTS.md`:
+A monorepo with two functionally identical implementations of the Team Agent for Slack, each self-contained with its own `AGENTS.md`. The agent keeps a team's runbooks (Slack canvases titled `Runbook: <topic>`) current from channel messages and answers requests from them:
 
 - `claude-agent-sdk/`: Claude Agent SDK
 - `openai-agents-sdk/`: OpenAI Agents SDK
