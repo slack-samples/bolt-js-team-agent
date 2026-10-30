@@ -1,6 +1,6 @@
-# Starter Agent for Slack
+# Team Agent for Slack
 
-A minimal starter template for building AI-powered Slack agents with [Bolt for JavaScript](https://docs.slack.dev/tools/bolt-js/). Works with the [Slack MCP Server](https://github.com/slackapi/slack-mcp-server) to search messages, read channels, send messages, and manage canvases — all from within your agent. Includes one example tool (emoji reactions), giving you a clean foundation to build on.
+A sample Slack agent built with [Bolt for JavaScript](https://docs.slack.dev/tools/bolt-js/) that keeps your team's runbooks current and helps route the requests that come in. Runbooks are Slack canvases titled `Runbook: <topic>`. The agent answers from them, and it learns from the messages in your team's channels, so the runbooks it writes are the ones it answers from next time.
 
 ## Choose Your Framework
 
@@ -55,26 +55,14 @@ npx skills add slackapi/slack-skills-plugin -y -a opencode
 
 ## What It Can Do
 
-The starter agent interacts with users through four entry points:
+The team agent interacts with users through five entry points:
 
 * **App Home** — Displays a welcome message with instructions on how to interact.
-* **Direct Messages** — Users message the agent directly. It responds in-thread, maintaining context across follow-ups.
-* **Channel @mentions** — Mention the agent in any channel to get a response without leaving the conversation.
+* **Direct Messages** — Users message the agent directly to find a runbook or triage a request. It responds in-thread, maintaining context across follow-ups.
+* **Channel @mentions** — Mention the agent in a team channel with a request. It answers from a runbook when one covers it, or offers to start one.
+* **Channel messages** — The agent follows along in channels it's a member of. When a message settles something worth keeping, the agent adds it to the team's runbooks on its own.
 * **Assistant Panel** — Users click _Add Agent_ in Slack, select the agent, and pick from suggested prompts or type a message.
 
-When connected to the [Slack MCP Server](https://github.com/slackapi/slack-mcp-server), the agent can search messages and files, read channel history and threads, send and schedule messages, and create and update canvases. The template also includes one example tool (emoji reactions). Add your own tools to customize the agent for your use case.
-
-## Using the App
-
-Once the agent is running, there are several ways to interact:
-
-* **App Home** — Open the agent in Slack and click the _Home_ tab to see a welcome message.
-* **Direct Messages** — Open a DM with the agent. Pick a suggested prompt or type your own message, and the agent will reply in a thread.
-* **Channel @mentions** — Invite the agent to a channel by typing `/invite @agent-name`, then @mention it with your message. It responds in a thread so the channel stays clean.
-* **Assistant Panel** — Click _Add Agent_ in the top-right corner of Slack, select the agent, and choose a suggested prompt like _Write a Message_, _Summarize_, or _Brainstorm_.
+With the bot token, the agent lists, reads, and creates runbooks. A person who connects the [Slack MCP Server](https://github.com/slackapi/slack-mcp-server) from the Home tab has the agent work with runbooks as them instead, which can also update existing runbooks. When the agent changes a runbook, it tells the message's author with an ephemeral message only they can see.
 
 For full setup instructions, pick a framework above and follow the README in that directory.
-
-## Local Development
-
-This repo uses [`@slack/bolt`](https://www.npmjs.com/package/@slack/bolt) from npm.
