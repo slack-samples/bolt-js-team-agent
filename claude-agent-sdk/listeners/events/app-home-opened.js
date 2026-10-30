@@ -1,9 +1,18 @@
 import { buildAppHomeView } from '../views/app-home-builder.js';
 
 const SUGGESTED_PROMPTS = [
-  { title: 'Write a Message', message: 'Help me draft a message to my team' },
-  { title: 'Summarize', message: 'Can you help me summarize something?' },
-  { title: 'Brainstorm', message: 'I need help brainstorming ideas' },
+  {
+    title: 'Find a Runbook',
+    message: "Is there a runbook for rotating our app's signing secret?",
+  },
+  {
+    title: 'Triage a Request',
+    message: 'Deploys started failing this morning. What should I do?',
+  },
+  {
+    title: 'Write a Runbook',
+    message: 'Help me write a runbook for onboarding a new teammate',
+  },
 ];
 
 /**

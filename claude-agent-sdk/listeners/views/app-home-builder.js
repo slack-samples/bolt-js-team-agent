@@ -11,7 +11,7 @@ export function buildAppHomeView(installUrl = null, isConnected = false) {
       type: 'header',
       text: {
         type: 'plain_text',
-        text: "Hey there :wave: I'm your Slack assistant.",
+        text: "Hey there :wave: I'm your team agent.",
       },
     },
     {
@@ -19,9 +19,9 @@ export function buildAppHomeView(installUrl = null, isConnected = false) {
       text: {
         type: 'mrkdwn',
         text:
-          "I'm here to help! You can ask me questions, have a conversation, " +
-          'or ask me to do things in Slack.\n\n' +
-          'Send me a *direct message* or *mention me in a channel* to get started.',
+          "I keep your team's runbooks current and help route requests.\n\n" +
+          "*Invite me to your team channel* and I'll add what your messages settle to runbooks. " +
+          '*Mention me* or *send me a direct message* to find a runbook or triage a request.',
       },
     },
     { type: 'divider' },
@@ -41,7 +41,7 @@ export function buildAppHomeView(installUrl = null, isConnected = false) {
         elements: [
           {
             type: 'mrkdwn',
-            text: 'The agent can search messages, read channels, and more.',
+            text: 'The agent works with runbooks as you, through the Slack MCP Server.',
           },
         ],
       },
@@ -60,7 +60,7 @@ export function buildAppHomeView(installUrl = null, isConnected = false) {
         elements: [
           {
             type: 'mrkdwn',
-            text: 'The Slack MCP Server enables the agent to search messages, read channels, and more.',
+            text: 'Connect the Slack MCP Server so the agent works with runbooks as you.',
           },
         ],
       },
@@ -71,7 +71,7 @@ export function buildAppHomeView(installUrl = null, isConnected = false) {
         type: 'section',
         text: {
           type: 'mrkdwn',
-          text: '\ud83d\udd34 *Slack MCP Server is disconnected.* <https://github.com/slack-samples/bolt-js-starter-agent/blob/main/claude-agent-sdk/README.md#slack-mcp-server|Learn how to enable the Slack MCP Server.>',
+          text: '\ud83d\udd34 *Slack MCP Server is disconnected.* <https://github.com/slack-samples/bolt-js-team-agent/blob/main/claude-agent-sdk/README.md#slack-mcp-server|Learn how to enable the Slack MCP Server.>',
         },
       },
       {
@@ -79,7 +79,7 @@ export function buildAppHomeView(installUrl = null, isConnected = false) {
         elements: [
           {
             type: 'mrkdwn',
-            text: 'The Slack MCP Server enables the agent to search messages, read channels, and more.',
+            text: 'Connect the Slack MCP Server so the agent works with runbooks as you.',
           },
         ],
       },
