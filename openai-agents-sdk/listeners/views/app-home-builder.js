@@ -20,7 +20,7 @@ export function buildAppHomeView(installUrl = null, isConnected = false) {
         type: 'mrkdwn',
         text:
           "I keep your team's runbooks current and help route requests.\n\n" +
-          "*Invite me to your team channel* and I'll add what its messages settle to runbooks. " +
+          "*Invite me to your team channel* and I'll add what your messages settle to runbooks. " +
           '*Mention me* or *send me a direct message* to find a runbook or triage a request.',
       },
     },

@@ -34,7 +34,9 @@ export async function handleMessage({ client, context, event, logger, say, saySt
   // Skip bot messages
   if ('bot_id' in event && event.bot_id) return;
 
-  if (isLearnedMessageEvent(event) && event.channel_type !== 'im') {
+  const isDm = event.channel_type === 'im';
+
+  if (!isDm && isLearnedMessageEvent(event)) {
     try {
       const deps = new AgentDeps(
         client,
@@ -61,7 +63,6 @@ export async function handleMessage({ client, context, event, logger, say, saySt
   // Skip message subtypes (edits, deletes, etc.)
   if (!isGenericMessageEvent(event)) return;
 
-  const isDm = event.channel_type === 'im';
   const isThreadReply = !!event.thread_ts;
 
   if (isDm) {

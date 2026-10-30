@@ -18,12 +18,12 @@ export const createRunbook = tool({
     const deps = /** @type {import('../deps.js').AgentDeps} */ (context?.context);
     try {
       const created = await deps.client.canvases.create({
-        channel_id: deps.channelId,
-        document_content: {
-          markdown,
-          type: 'markdown',
-        },
         title: `Runbook: ${topic}`,
+        document_content: {
+          type: 'markdown',
+          markdown,
+        },
+        channel_id: deps.channelId,
       });
       const { file } = await deps.client.files.info({
         file: /** @type {string} */ (created.canvas_id),
