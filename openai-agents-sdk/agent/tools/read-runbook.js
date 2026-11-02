@@ -10,11 +10,9 @@ export const readRunbook = tool({
   execute: async ({ canvas_id }, context) => {
     const deps = /** @type {import('../deps.js').AgentDeps} */ (context?.context);
     try {
-      const response = /** @type {{ content?: string }} */ (
-        await deps.client.apiCall('canvases.getContent', {
-          canvas_id,
-        })
-      );
+      const response = await deps.client.canvases.getContent({
+        canvas_id,
+      });
       return response.content ?? '';
     } catch (e) {
       const err = /** @type {any} */ (e);
