@@ -12,11 +12,9 @@ export const readRunbook = (deps) =>
     async ({ canvas_id }) => {
       let text;
       try {
-        const response = /** @type {{ content?: string }} */ (
-          await deps.client.apiCall('canvases.getContent', {
-            canvas_id,
-          })
-        );
+        const response = await deps.client.canvases.getContent({
+          canvas_id,
+        });
         text = response.content ?? '';
       } catch (e) {
         const err = /** @type {any} */ (e);

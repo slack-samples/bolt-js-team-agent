@@ -34,8 +34,7 @@ describe('tools', () => {
 
   beforeEach(() => {
     client = {
-      apiCall: mock.fn(),
-      canvases: { create: mock.fn() },
+      canvases: { create: mock.fn(), getContent: mock.fn() },
       files: {
         info: mock.fn(async () => ({
           file: {
@@ -85,21 +84,18 @@ describe('tools', () => {
   });
 
   it('read_runbook returns its markdown', async () => {
-    client.apiCall = mock.fn(async () => ({ content: '# Steps\n1. Rotate the secret' }));
+    client.canvases.getContent = mock.fn(async () => ({ content: '# Steps\n1. Rotate the secret' }));
 
     const result = await invoke(readRunbook, deps, { canvas_id: 'F123' });
 
-    assert.deepStrictEqual(client.apiCall.mock.calls[0].arguments, [
-      'canvases.getContent',
-      {
-        canvas_id: 'F123',
-      },
-    ]);
+    assert.deepStrictEqual(client.canvases.getContent.mock.calls[0].arguments[0], {
+      canvas_id: 'F123',
+    });
     assert.strictEqual(result, '# Steps\n1. Rotate the secret');
   });
 
   it('read_runbook reports errors', async () => {
-    client.apiCall = mock.fn(async () => {
+    client.canvases.getContent = mock.fn(async () => {
       throw slackError('canvas_not_found');
     });
 
