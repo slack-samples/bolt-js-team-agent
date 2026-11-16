@@ -6,10 +6,10 @@ A sample Slack agent built with [Bolt for JavaScript](https://docs.slack.dev/too
 
 This repo contains the same app built with two different AI agent frameworks. Pick the one that fits your stack:
 
-| App | Directory | Get Started | Framework |
-|-----|-----------|-------------|-----------|
-| **Claude Agent SDK** | `claude-agent-sdk/` | [View README](./claude-agent-sdk/README.md) | [claude-agent-sdk](https://platform.claude.com/docs/en/agent-sdk/overview) |
-| **OpenAI Agents SDK** | `openai-agents-sdk/` | [View README](./openai-agents-sdk/README.md) | [openai-agents](https://openai.github.io/openai-agents-js/) |
+| App                   | Directory            | Get Started                                  | Framework                                                                  |
+| --------------------- | -------------------- | -------------------------------------------- | -------------------------------------------------------------------------- |
+| **Claude Agent SDK**  | `claude-agent-sdk/`  | [View README](./claude-agent-sdk/README.md)  | [claude-agent-sdk](https://platform.claude.com/docs/en/agent-sdk/overview) |
+| **OpenAI Agents SDK** | `openai-agents-sdk/` | [View README](./openai-agents-sdk/README.md) | [openai-agents](https://openai.github.io/openai-agents-js/)                |
 
 All implementations share the same Slack listener layer and the same user experience. The only difference is how the agent is defined and executed under the hood.
 
@@ -60,11 +60,11 @@ npx skills add slackapi/slack-skills-plugin -y -a opencode
 
 The team agent interacts with users through five entry points:
 
-* **App Home** — Displays a welcome message with instructions on how to interact.
-* **Direct Messages** — Users message the agent directly to find a runbook or triage a request. It responds in-thread, maintaining context across follow-ups.
-* **Channel @mentions** — Mention the agent in a team channel with a request. It answers from a runbook when one covers it, or offers to start one.
-* **Channel messages** — The agent follows along in channels it's a member of. When a message settles something worth keeping, the agent adds it to the team's runbooks on its own.
-* **Assistant Panel** — Users click _Add Agent_ in Slack, select the agent, and pick from suggested prompts or type a message.
+- **App Home** — Displays a welcome message with instructions on how to interact.
+- **Direct Messages** — Users message the agent directly to find a runbook or triage a request. It responds in-thread, maintaining context across follow-ups.
+- **Channel @mentions** — Mention the agent in a team channel with a request. It answers from a runbook when one covers it, or offers to start one.
+- **Channel messages** — The agent follows along in channels it's a member of. When a message settles something worth keeping, the agent adds it to the team's runbooks on its own.
+- **Assistant Panel** — Users click _Add Agent_ in Slack, select the agent, and pick from suggested prompts or type a message.
 
 With the bot token, the agent lists, reads, and creates runbooks. A person who connects the [Slack MCP Server](https://github.com/slackapi/slack-mcp-server) from the Home tab has the agent work with runbooks as them instead, which can also update existing runbooks. When the agent changes a runbook, it tells the message's author with an ephemeral message only they can see.
 
